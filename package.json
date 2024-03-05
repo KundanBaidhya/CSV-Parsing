@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "convert-excel-to-json": "^1.7.0",
+    "csv-parser": "^3.0.0",
+    "flat": "^6.0.1",
+    "prompt-sync": "^4.2.0"
+  }
+}
