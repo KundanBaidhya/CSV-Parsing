@@ -23,7 +23,7 @@ switch (language) {//switch case for different language input
             let currentObj = mergedObject;
 
             keys.forEach((key, index) => {
-                if (index === keys.length - 1) {
+                if (index === keys.length - 1) { 
                     // Last key, assign the value
                     currentObj[key] = str2;
                 } else {
