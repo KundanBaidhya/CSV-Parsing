@@ -2,14 +2,14 @@ const excelToJson = require('convert-excel-to-json');
 const prompt = require('prompt-sync')();
 const fs = require('fs');
 
-const result = excelToJson({sourceFile: 'Presidents.xlsx'});
+const result = excelToJson({ sourceFile: 'Presidents.xlsx' });
 
 const mergedObject = {};
 const column = '';
 const keys = Object.keys(result); //taking every sheet name as from 
 console.log(keys);//the key value pair and storing them in an array named keys.
 
-const myFunc = (column, Language)=>{
+const myFunc = (column, language, lanType)=>{
 
     for(let sheetName of keys){ //looping over the keys
         sheet = result[sheetName];//to make individual files for every sheet.
@@ -33,10 +33,25 @@ const myFunc = (column, Language)=>{
             });
         }
 
-    // Writing the merged object to a file
-    fs.writeFileSync(sheetName+' '+Language+'.json', JSON.stringify(mergedObject, null, 2));
-    console.log('JSON written to '+sheetName+' '+Language+'.json');
-    }   
+        // Writing the merged object to a file
+        if (lanType === 'json') {
+            // INTO JSON
+            fs.writeFileSync(sheetName+' '+language+'.json', JSON.stringify(mergedObject, null, 2));
+            console.log('JSON written to ' +sheetName+' '+language+ '.json');
+        } else if (lanType === 'js') {
+            // INTO JS
+            fs.writeFileSync(sheetName+' '+language+ '.js', `module.exports = ${JSON.stringify(mergedObject, null, 2)};`);
+            console.log('JavaScript written to ' +sheetName+' '+language+ '.js');
+        } else if (lanType === 'ts') {
+            //  INTO TS
+            // importing data from the file would require using the "data" constant
+            fs.writeFileSync(sheetName+' '+language+ '.ts', `export const data = ${JSON.stringify(mergedObject, null, 2)};`);
+            console.log('TypeScript written to ' + sheetName+' '+language+ '.ts');
+        } else {
+            console.log("Invalid file type! Please enter either: JSON, JS or TS.")
+        };
+
+    }
 }
 
-module.exports = {myFunc,};
+module.exports = { myFunc, };
