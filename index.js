@@ -11,7 +11,7 @@ const language = prompt(
   "Enter which language do you want your file to be : English Spanish Chinese = "
 );
 //Shows a log and takes input and stores it in a language constant
-const lanType = prompt("Which file extention would you like: JSON, JS, TS = ");
+const lanType = prompt("Which file extention would you like: JSON, JS, TS, RESX = ");
 //takes input about the file extension type and stores in lanType constant
 const mergedObject = {}; // Initialize an empty object for merging
 
@@ -28,6 +28,9 @@ switch (language) {
       case 'TS':
         myFunc('B', 'English', 'ts');
         break;
+      case 'RESX':
+        myFunc('B', 'English', 'resx');
+        break;
     }
     break;
 
@@ -42,6 +45,9 @@ switch (language) {
       case 'TS':
         myFunc('C', 'Spanish', 'ts');
         break;
+      case 'RESX':
+        myFunc('C', 'Spanish', 'resx');
+        break;
     }
     break;
 
@@ -55,6 +61,9 @@ switch (language) {
         break;
       case 'TS':
         myFunc('D', 'Chinese', 'ts');
+        break;
+      case 'RESX':
+        myFunc('D', 'Chinese', 'resx');
         break;
     }
     break;
