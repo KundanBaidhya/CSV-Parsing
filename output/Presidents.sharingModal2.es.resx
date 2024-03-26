@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+             <root>
+             <xsd:schema id="root" xmlns="" 
+                 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                 xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+                 <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+                 <xsd:element name="root" msdata:IsDataSet="true">
+                     <xsd:complexType>
+                         <xsd:choice maxOccurs="unbounded">
+                             <xsd:element name="metadata">
+                                 <xsd:complexType>
+                                     <xsd:sequence>
+                                         <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                                     </xsd:sequence>
+                                     <xsd:attribute name="name" use="required" type="xsd:string" />
+                                     <xsd:attribute name="type" type="xsd:string" />
+                                     <xsd:attribute name="mimetype" type="xsd:string" />
+                                     <xsd:attribute ref="xml:space" />
+                                 </xsd:complexType>
+                             </xsd:element>
+                             <xsd:element name="assembly">
+                                 <xsd:complexType>
+                                 <xsd:attribute name="alias" type="xsd:string" />
+                                 <xsd:attribute name="name" type="xsd:string" />
+                                 </xsd:complexType>
+                             </xsd:element>
+                             <xsd:element name="data">
+                                 <xsd:complexType>
+                                 <xsd:sequence>
+                                     <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                     <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                                 </xsd:sequence>
+                                 <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                                 <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                                 <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                                 <xsd:attribute ref="xml:space" />
+                                 </xsd:complexType>
+                             </xsd:element>
+                             <xsd:element name="resheader">
+                                 <xsd:complexType>
+                                 <xsd:sequence>
+                                     <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                 </xsd:sequence>
+                                 <xsd:attribute name="name" type="xsd:string" use="required" />
+                                 </xsd:complexType>
+                             </xsd:element>
+                         </xsd:choice>
+                     </xsd:complexType>
+                 </xsd:element>
+             </xsd:schema>
+             <resheader name="resmimetype">
+                 <value>text/microsoft-resx</value>
+             </resheader>
+             <resheader name="version">
+                 <value>2.0</value>
+             </resheader>
+             <resheader name="reader">
+                 <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+             </resheader>
+             <resheader name="writer">
+                 <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+             </resheader>   <data name="key" xml:space="preserve">
+    <value>esp</value>
+  </data>
+  <data name="TITLE" xml:space="preserve">
+    <value>Espanol~1</value>
+  </data>
+  <data name="SEARCH_TEXT" xml:space="preserve">
+    <value>Espanol~2</value>
+  </data>
+  <data name="CREATED_BY" xml:space="preserve">
+    <value>Espanol~3</value>
+  </data>
+  <data name="ASSET_TYPE" xml:space="preserve">
+    <value>Espanol~4</value>
+  </data>
+  <data name="CREATED_SEARCH_PLACEHOLDER" xml:space="preserve">
+    <value>Espanol~5</value>
+  </data>
+  <data name="PLACEHOLDER" xml:space="preserve">
+    <value>Espanol~6</value>
+  </data>
+  <data name="ASSET_NAME_HEADER_TEXT" xml:space="preserve">
+    <value>Espanol~7</value>
+  </data>
+  <data name="CREATED_BY_HEADER_TEXT" xml:space="preserve">
+    <value>Espanol~8</value>
+  </data>
+  <data name="DEFAULT_CREATOR_NAME" xml:space="preserve">
+    <value>Espanol~9</value>
+  </data>
+  <data name="COLUMN_HEADER" xml:space="preserve">
+    <value>Espanol~10</value>
+  </data>
+  <data name="COMPANY_ICON_TOOLTIP" xml:space="preserve">
+    <value>Espanol~11</value>
+  </data>
+  <data name="COLUMN_HEADER" xml:space="preserve">
+    <value>Espanol~12</value>
+  </data>
+  <data name="MODIFY_ACCESS_CTA" xml:space="preserve">
+    <value>Espanol~13</value>
+  </data>
+  <data name="HEADER" xml:space="preserve">
+    <value>Espanol~14</value>
+  </data>
+  <data name="SUBHEADER" xml:space="preserve">
+    <value>Espanol~15</value>
+  </data>
+  <data name="LOADING_TEMPLATE_TEXT" xml:space="preserve">
+    <value>Espanol~16</value>
+  </data>
+  <data name="TITLE" xml:space="preserve">
+    <value>Espanol~17</value>
+  </data>
+  <data name="BODY_TEXT1" xml:space="preserve">
+    <value>Espanol~18</value>
+  </data>
+  <data name="BODY_TEXT1" xml:space="preserve">
+    <value>Espanol~19</value>
+  </data>
+  <data name="ACTIONTEXT" xml:space="preserve">
+    <value>Espanol~20</value>
+  </data>
+  <data name="ACCESS_UPDATE_SUCCESS" xml:space="preserve">
+    <value>Espanol~21</value>
+  </data>
+  <data name="ACCESS_UPDATE_FAILURE" xml:space="preserve">
+    <value>Espanol~22</value>
+  </data>
+  <data name="HEADING_MY_LIBRARY" xml:space="preserve">
+    <value>Espanol~23</value>
+  </data>
+  <data name="FontSet" xml:space="preserve">
+    <value>Espanol~24</value>
+  </data>
+  <data name="Folder" xml:space="preserve">
+    <value>Espanol~25</value>
+  </data>
+  <data name="WebProject" xml:space="preserve">
+    <value>Espanol~26</value>
+  </data>
+  <data name="DigitalAd" xml:space="preserve">
+    <value>Espanol~27</value>
+  </data>
+  <data name="UPDATE" xml:space="preserve">
+    <value>Espanol~28</value>
+  </data>
+  <data name="SHARE" xml:space="preserve">
+    <value>Espanol~29</value>
+  </data>
+
+</root>

@@ -1,15 +1,16 @@
 const fs = require('fs');
 
 const createFile = (passedObject)=>{
+    const fileName = passedObject['fileName'].split('.')[0];
     switch(passedObject['extensionType']){
         case 'json' :
-            fs.writeFileSync('/CSV-PARSING/output/'+passedObject['sheetName']+' '+passedObject['language']+'.json', JSON.stringify(passedObject['mergedObject'], null, 2));
-            console.log('JSON written to ' +passedObject['sheetName']+' '+passedObject['language']+ '.json');
+            fs.writeFileSync('/CSV-PARSING/output/'+fileName+'.'+passedObject['sheetName']+'.'+passedObject['language']+'.json', JSON.stringify(passedObject['mergedObject'], null, 2));
+            console.log('JSON written to ' +fileName+' '+passedObject['sheetName']+' '+passedObject['language']+ '.json');
         break;
 
         case 'js' :
-            fs.writeFileSync('/CSV-PARSING/output/'+passedObject['sheetName']+' '+passedObject['language']+ '.js', `export default ${JSON.stringify(passedObject['mergedObject'], null, 2)};`);
-            console.log('JavaScript written to ' +passedObject[sheetName]+' '+passedObject[language]+ '.js');
+            fs.writeFileSync('/CSV-PARSING/output/'+fileName+'.'+passedObject['sheetName']+'.'+passedObject['language']+ '.js', `export default ${JSON.stringify(passedObject['mergedObject'], null, 2)};`);
+            console.log('JavaScript written to ' +fileName+'.'+passedObject['sheetName']+'.'+passedObject['language']+ '.js');
         break;
 
         case 'ts' :
@@ -25,7 +26,7 @@ const createFile = (passedObject)=>{
                           const value = obj[key];
                           const finalValue = typeof value === 'string' && value.includes("'") ? `"${value}"` : `'${value}'`;
                           // checks if the value is a string to use the include method
-                          // if its not a string, the value is surounded by sinle quotes
+                          // if its not a string, the value is surounded by single quotes
                           // if it is a string and contains a single quote, it is surrounded by
                           // double quotes to prevent syntax errors
                           if (typeof value === 'object' && value !== null) {
@@ -44,8 +45,8 @@ const createFile = (passedObject)=>{
                   return result;
               };
               const finalData = formatObject(passedObject['mergedObject'], 2);
-              fs.writeFileSync('/CSV-PARSING/output/'+passedObject['sheetName'] + ' ' + passedObject['language'] + '.ts', finalData);
-              console.log('TS written to ' +passedObject['sheetName']+' '+passedObject['language']+ '.ts');
+              fs.writeFileSync('/CSV-PARSING/output/'+fileName+'.'+passedObject['sheetName'] + '.' + passedObject['language'] + '.ts', finalData);
+              console.log('TS written to ' +fileName+'.'+passedObject['sheetName']+'.'+passedObject['language']+ '.ts');
         break;
 
         case 'resx':
@@ -129,8 +130,8 @@ const createFile = (passedObject)=>{
              };
              flattenValue(passedObject['mergedObject']);
              resxContent += '\n</root>';
-             fs.writeFileSync('/CSV-PARSING/output/'+passedObject['sheetName'] + ' ' + passedObject['language'] + '.resx', resxContent);
-             console.log('RESX written to ' + passedObject['sheetName'] + ' ' + passedObject['language'] + '.resx');
+             fs.writeFileSync('/CSV-PARSING/output/'+fileName+'.'+passedObject['sheetName'] + '.' + passedObject['language'] + '.resx', resxContent);
+             console.log('RESX written to ' +fileName+'.'+ passedObject['sheetName'] + '.' + passedObject['language'] + '.resx');
         break;
 
         default :

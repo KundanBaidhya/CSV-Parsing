@@ -1,16 +1,14 @@
 const excelToJson = require('convert-excel-to-json');
-const prompt = require('prompt-sync')();
-const fs = require('fs');
 const {createFile} = require('./choose-language');
 
-const sourceFile = 'files/Presidents.xlsx';
-const result = excelToJson({ sourceFile: sourceFile });
 
-const mergedObject = {};
-const column = '';
-const keys = Object.keys(result); //taking every sheet name as from the key value pair and storing them in an array named keys.
+const createNestedObject = (column, language, extensionType, fileName)=>{
+    const sourceFile = 'files/'+fileName;
+    const result = excelToJson({ sourceFile: sourceFile });
 
-const createNestedObject = (column, language, extensionType)=>{
+    const mergedObject = {};
+    const keys = Object.keys(result); //taking every sheet name as from the key value pair and storing them in an array named keys.
+
 
     for(let sheetName of keys){ //looping over the keys
         let sheet = [];
@@ -35,15 +33,16 @@ const createNestedObject = (column, language, extensionType)=>{
         }
 
         const objectToPass = {
+            fileName: fileName,
             language : language,
             extensionType : extensionType,
             sheetName : sheetName,
             mergedObject: mergedObject
         };
 
-       createFile(objectToPass);
+    createFile(objectToPass);
 
     }
 }
 
-module.exports = { createNestedObject, };
+module.exports = { createNestedObject };
