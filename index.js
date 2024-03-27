@@ -1,34 +1,39 @@
-const excelToJson = require("convert-excel-to-json");
-const prompt = require("prompt-sync")();
-const fs = require("fs");
-const { myFunc } = require("./helper");
+const { createNestedObject } = require('./helper/create-nested-object');
+const process = require('process');
+const fs = require('fs');
 
-const result = excelToJson({ sourceFile: "Presidents.xlsx" });
+try {
+  const language = process.argv[2].toLowerCase();
+  //takes the third argument and stores it in a language constant
+  const extensionType = process.argv[3].toLowerCase();
+  //takes the fourth argument about the file extension type and stores in lanType constant
 
-console.log(result); //log to show the result that has been parsed from the excel file
+  const allExcelSheet = fs.readdirSync('files/');
 
-const language = prompt(
-  "Enter which language do you want your file to be : English Spanish Chinese = "
-);
-//Shows a log and takes input and stores it in a language constant
+  for(excelSheetName of allExcelSheet){
+    switch (language) {
+      case "english":
+        createNestedObject('B', 'en', extensionType, excelSheetName);
+        break;
 
-const mergedObject = {}; // Initialize an empty object for merging
+      case "spanish":
+        createNestedObject('C', 'es', extensionType, excelSheetName);
+        break;
 
-//switch case for different language input
-switch (language) {
-  case "English":
-    myFunc("B", "English");
-    break;
+      case "chinese":
+        createNestedObject('D', 'ch', extensionType. excelSheetName);
+        break;
 
-  case "Spanish":
-    myFunc("C", "Spanish");
-    break;
-
-  case "Chinese":
-    myFunc("D", "Chinese");
-    break;
-
-  default:
-    console.log("Please choose a given languages only.");
-    break;
+      default:
+        console.log('Please choose a given languages only.');
+        break;
+    }
+  }
+} catch (error) {
+  if(error.name=='TypeError'){
+    console.log('Please enter both language and extension type');
+  }
+  else{
+    console.log(error);
+  }
 }
