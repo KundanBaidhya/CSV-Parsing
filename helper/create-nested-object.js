@@ -18,7 +18,7 @@ const createNestedObject = (column, language, extensionType, fileName)=>{
             const str1 = element.A.toString();//to get specific keys from the
             const str2 = String(element[column]);// key value pair.
             
-            const keys = str1.split('.');// Splitting the keys
+            const keys = str1.split(/[.\s]+/).filter(Boolean);// Splitting the keys
             let currentObj = mergedObject;
     
             keys.forEach((key, index) => {
