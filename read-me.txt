@@ -1,6 +1,0 @@
--Store all the files that you want to read in the files folder and the output,
-will be generated in the output folder.
-
--To start the program, Enter 'node index.js *language* *extension*'.
-
--Replace the *language* and *extension* with something like spanish and resx.
